@@ -2865,6 +2865,10 @@ static void breakpoint_resolve_helper(void *rctxt, xdebug_hash_element *he)
  * to resolve them at run-time */
 int xdebug_dbgp_resolve_breakpoints(xdebug_con *context, zend_string *filename)
 {
+	if (!XINI_DBG(remote_resolve_breakpoints)) {
+		return 1;
+	}
+
 	xdebug_dbgp_resolve_context resolv_ctxt;
 	xdebug_lines_list *lines_list;
 

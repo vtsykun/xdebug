@@ -53,6 +53,7 @@ typedef struct _xdebug_debugger_settings_t {
 	long          remote_mode;    /* XDEBUG_NONE, XDEBUG_JIT, XDEBUG_REQ */
 	zend_bool     remote_autostart; /* Disables the requirement for XDEBUG_SESSION_START */
 	zend_bool     remote_connect_back;   /* connect back to the HTTP requestor */
+	zend_bool     remote_resolve_breakpoints;  /* Disables the supports the notion of resolving breakpoints */
 	char         *remote_log;       /* Filename to log protocol communication to */
 	zend_long     remote_log_level; /* Log level XDEBUG_LOG_{ERR,WARN,INFO,DEBUG} */
 	zend_long     remote_cookie_expire_time; /* Expire time for the remote-session cookie */
